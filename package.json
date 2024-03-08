@@ -1,0 +1,23 @@
+{
+  "name": "stress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pkg": "npx pkg ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "DESCRICAO": "as linhas abaixo são necessárias para o funcionamento do pkg",
+  "bin": "index.js",
+  "pkg": {
+    "targets": [
+      "node16-win-x64"
+    ]
+  },
+  "dependencies": {
+    "pkg": "^5.8.1"
+  }
+}
