@@ -1,4 +1,5 @@
-const readlineInterface = require('node:readline')
+const path = require('node:path');
+const readlineInterface = require('node:readline');
 
 const readline = readlineInterface.createInterface({
   input: process.stdin,
@@ -19,7 +20,9 @@ function startThreads(number) {
   const { Worker } = require('worker_threads');
   threads = [];
   for (let i = 0; i < number; i++) {
-    let worker = new Worker('./worker.js', { workerData: { threadId: i } });
+    // usei assim para rodar o pkg
+    let worker = new Worker(path.join(__dirname, 'src/worker.js'), { workerData: { threadId: i } });
+    // let worker = new Worker('./src/worker.js', { workerData: { threadId: i } });
     worker.postMessage({ start: true, threadId: i, count: 40 });
     threads.push(worker);
   }

@@ -15,7 +15,8 @@
   "pkg": {
     "targets": [
       "node16-win-x64"
-    ]
+    ],
+    "scripts": "src/**/*.js"
   },
   "dependencies": {
     "pkg": "^5.8.1"
